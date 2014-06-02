@@ -7,11 +7,21 @@ angular.module('myApp', [
   'myApp.filters',
   'myApp.services',
   'myApp.directives',
-  'myApp.controllers'
+  'myApp.controllers',
+  'prismic.io'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {templateUrl: 'partials/home.html', controller: 'HomeCtrl'});
   $routeProvider.when('/document/:id/:slug', {templateUrl: 'partials/document.html', controller: 'DocumentCtrl'});
   $routeProvider.when('/search/:q', {templateUrl: 'partials/search.html', controller: 'SearchCtrl'});
   $routeProvider.otherwise({redirectTo: '/'});
+}]).
+config(['PrismicProvider', function(PrismicProvider) {
+    PrismicProvider.setApiEndpoint('https://lesbonneschoses.prismic.io/api');
+    PrismicProvider.setAccessToken('');
+    PrismicProvider.setClientId('');
+    PrismicProvider.setClientSecret('');
+    PrismicProvider.setLinkResolver(function(ctx, doc) {
+        return '#/document/' + doc.id + '/' + doc.slug + ctx.maybeRefParam;
+    });
 }]);

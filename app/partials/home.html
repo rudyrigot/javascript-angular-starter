@@ -1,1 +1,18 @@
-<h1>Home</h1>
+<a href="index.html">
+	<h1>Your prismic.io project</h1>
+</a>
+
+<form action="#" method="GET">
+    <input type="text" name="q" ng-model="searchq">
+    <a href="#/search/{{searchq}}">Search</a>
+</form>
+
+<h2>{{documents.results.length}} documents</h2>
+
+<ul id="list">
+    <li ng-repeat=" document in documents.results">
+        <a href="#/document/{{document.id}}/{{document.slug}}">
+            {{document.slug}}
+        </a>
+    </li>
+</ul>
