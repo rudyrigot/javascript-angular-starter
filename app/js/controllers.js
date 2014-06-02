@@ -3,9 +3,13 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-  .controller('MyCtrl1', ['$scope', function($scope) {
+  .controller('HomeCtrl', ['$scope', function($scope) {
 
   }])
-  .controller('MyCtrl2', ['$scope', function($scope) {
-
+  .controller('DocumentCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
+  	$scope.id = $routeParams.id;
+  	$scope.slug = $routeParams.slug;
+  }])
+  .controller('SearchCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
+  	$scope.q = $routeParams.q;
   }]);
