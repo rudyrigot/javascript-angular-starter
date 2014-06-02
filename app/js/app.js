@@ -8,7 +8,8 @@ angular.module('myApp', [
   'myApp.services',
   'myApp.directives',
   'myApp.controllers',
-  'prismic.io'
+  'prismic.io',
+  'ngSanitize'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {templateUrl: 'partials/home.html', controller: 'HomeCtrl'});
