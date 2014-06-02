@@ -23,5 +23,9 @@ angular.module('myApp.controllers', [])
 		});
 	}])
 	.controller('SearchCtrl', ['$scope', '$routeParams', 'Prismic', function($scope, $routeParams, Prismic) {
+		$scope.searchq = $routeParams.q;
 		$scope.q = $routeParams.q;
+		Prismic.query('[[:d = fulltext(document, "'+$routeParams.q+'")]]').then(function(documents){
+			$scope.documents = documents;
+		});
 	}]);
