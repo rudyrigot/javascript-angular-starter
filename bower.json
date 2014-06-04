@@ -10,7 +10,7 @@
     "angular-route": "1.2.x",
     "angular-loader": "1.2.x",
     "angular-mocks": "~1.2.x",
-    "angular-prismicio": "~0.1.0",
+    "angular-prismicio": "git@github.com:rudyrigot/angular-prismicio.git#expose_api_ctx",
     "html5-boilerplate": "~4.3.0",
     "angular-sanitize": "~1.2.16"
   }
