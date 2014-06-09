@@ -1,8 +1,9 @@
 ## Angular.js starter project for prismic.io
 
 This is a blank Angular.js project that will connect to any prismic.io repository, and trivially list its documents. It is based on:
+
  * the Angular.js Seed boilerplate ([read its README to learn how to use it](https://github.com/angular/angular-seed))
- * the [angular-prismicio module](https://github.com/awulder/angular-prismicio), which uses the prismic.io Javascript development kit and provides a few helpers to integrate with Angular.js.
+ * the [angular-prismicio module](https://github.com/awulder/angular-prismicio), which uses the prismic.io Javascript development kit and provides a few helpers to integrate with Angular.js. *(Note that the version used is the unstable version for now, as the stable one does not yet contain the Prismic.api() and Prismic.ctx() functions that allow to perform advanced queries.)*
 
 ### Getting started
 
@@ -10,7 +11,7 @@ This is a blank Angular.js project that will connect to any prismic.io repositor
 
 Fork this repository, then clone your fork, make sure you installed node and npm, and run `npm start`.
 
-Your Angular.js starter project is now up and running! However, by default, it will list and display documents from our "[Les Bonnes Choses](http://lesbonneschoses.prismic.me)" example repository.
+Your Angular.js starter project is now up and running! By default, it will list and display documents from our "[Les Bonnes Choses](http://lesbonneschoses.prismic.me)" example repository.
 
 #### Configure the starter project
 

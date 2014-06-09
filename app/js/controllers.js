@@ -11,7 +11,9 @@ angular.module('myApp.controllers', [])
 	.controller('DocumentCtrl', ['$scope', '$routeParams', 'Prismic', '$location', function($scope, $routeParams, Prismic, $location) {
 		Prismic.document($routeParams.id).then(function(document){
 			if (document.slug === $routeParams.slug) {
-				$scope.documentHtml = document.asHtml();
+				Prismic.ctx().then(function(ctx) {
+					$scope.documentHtml = document.asHtml(ctx);
+				})
 			}
 			else if (document.slugs.indexOf($routeParams.slug) >= 0) {
 				$location.path('/document/'+document.id+'/'+document.slug);
