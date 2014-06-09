@@ -12,6 +12,7 @@
     "angular-mocks": "~1.2.x",
     "angular-prismicio": "awulder/angular-prismicio#master",
     "html5-boilerplate": "~4.3.0",
-    "angular-sanitize": "~1.2.16"
+    "angular-sanitize": "~1.2.16",
+    "underscore": "~1.6.0"
   }
 }

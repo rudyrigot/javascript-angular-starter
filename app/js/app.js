@@ -12,9 +12,9 @@ angular.module('myApp', [
   'ngSanitize'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/', {templateUrl: 'partials/home.html', controller: 'HomeCtrl'});
+  $routeProvider.when('/:page?', {templateUrl: 'partials/home.html', controller: 'HomeCtrl'});
   $routeProvider.when('/document/:id/:slug', {templateUrl: 'partials/document.html', controller: 'DocumentCtrl'});
-  $routeProvider.when('/search/:q', {templateUrl: 'partials/search.html', controller: 'SearchCtrl'});
+  $routeProvider.when('/search/:q*/:page?', {templateUrl: 'partials/search.html', controller: 'SearchCtrl'});
   $routeProvider.otherwise({redirectTo: '/'});
 }]).
 config(['PrismicProvider', function(PrismicProvider) {

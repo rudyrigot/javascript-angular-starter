@@ -16,3 +16,15 @@
         </a>
     </li>
 </ul>
+
+<hr>
+
+<ul id="pagination" ng-if="documents.total_pages > 1">
+	<li ng-if="documents.prev_page"><a href="#/search/{{q}}/{{(documents.page-1 > 1 ? documents.page-1 : '' )}}">Previous</a></li>
+	<li ng-repeat="i in paginationRange">
+		<span ng-if="documents.page == i">{{i}}</span>
+		<a ng-if="documents.page != i" href="#/search/{{q}}/{{(i > 1 ? i : '' )}}">{{i}}</a>
+	</li>
+	</li>
+	<li ng-if="documents.next_page"><a href="#/search/{{q}}/{{documents.page+1}}">Next</a></li>
+</ul>
