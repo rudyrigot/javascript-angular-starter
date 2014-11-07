@@ -1,0 +1,3 @@
+    <form ng-controller="RefCtrl">
+        <select ng-show="refs.length" name="ref" ng-model="selectedRelease" ng-options="ref.label for ref in refs" ng-change="newRef(selectedRelease)"></select>
+    </form>

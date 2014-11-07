@@ -53,4 +53,21 @@ angular.module('myApp.controllers', [])
 					}
 				});
 		});
+	}])
+	.controller('RefCtrl', ['$scope', '$location', '$window', 'Prismic', function ($scope, $location, $window, Prismic) {
+		Prismic.ctx().then(function(ctx){
+			// Get available refs.
+			$scope.refs = ctx.api.data.refs;
+			// Find selected release based on URL query.
+			var release = _.where($scope.refs, {ref: $location.search().ref});
+			$scope.selectedRelease = release.length > 0 ? release[0] : $scope.refs[0];
+			$scope.newRef = function(selected) {
+				// When select element changed, update ctx object and configure
+				// $location service.
+				ctx.ref = selected.ref;
+				$location.path($location.path()).search({'ref': selected.ref});
+				// Alternatively, you can reload the page.
+				// $window.location.href = $location.path()+"?ref="+selected.ref;
+			}
+		});
 	}]);
